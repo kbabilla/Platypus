@@ -13,7 +13,8 @@ if [ -e ~/Library/Preferences/%%PROGRAM_BUNDLE_IDENTIFIER%%.plist ]; then
     mv ~/Library/Preferences/%%PROGRAM_BUNDLE_IDENTIFIER%%.plist ~/.Trash/%%PROGRAM_BUNDLE_IDENTIFIER%%-TRASHED-$RANDOM.plist
 fi
 
-if [ -e "%%APP_BUNDLE_PATH%%" ]; then
+APP_PATH="$1/../.."
+if [ -e "$APP_PATH" ]; then
     echo "Moving %%PROGRAM_NAME%%.app to Trash"
-    mv "%%APP_BUNDLE_PATH%%" ~/.Trash/%%PROGRAM_NAME%%-TRASHED-$RANDOM.app
+    mv "$APP_PATH" ~/.Trash/%%PROGRAM_NAME%%-TRASHED-$RANDOM.app
 fi
